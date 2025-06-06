@@ -67,18 +67,6 @@ class Agent:
             "messages": self.messages
         }
 
-    def execute(self, message):
-        """
-        Send the message to Gemini and return the response.
-
-        Args:
-            message (str): The message from the user.
-
-        Returns:
-            str: The model's response text.
-        """
-        response = self.chat.send_message(message)
-        return response.text
 
 prompt = """
 You run in a loop of Thought, Action, PAUSE, Observation.
