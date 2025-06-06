@@ -26,7 +26,7 @@ class Agent:
         self.context = context
         self.messages = []
         self.model = GenerativeModel(gemini_model)
-        self.chat = self.model.start_chat(history=[])
+        self.chat = self.model.start_chat()
 
 
     def __call__(self, message):
