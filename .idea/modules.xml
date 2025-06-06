@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/agentic-ai.iml" filepath="$PROJECT_DIR$/.idea/agentic-ai.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/Vertex-AI-RAG.iml" filepath="$PROJECT_DIR$/.idea/Vertex-AI-RAG.iml" />
+>>>>>>> dbaf583cb40c4d29f777eaf39ab834d2fd5aa703
     </modules>
   </component>
 </project>
