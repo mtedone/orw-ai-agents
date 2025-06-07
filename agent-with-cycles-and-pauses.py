@@ -176,4 +176,4 @@ def query(question):
             agent.inject(current_prompt)
 
 # --- Test ---
-query("What is the price of an orange?")
+query("If I bought 10 apples, 3 bananas and 2 oranges, what is the total price?")
