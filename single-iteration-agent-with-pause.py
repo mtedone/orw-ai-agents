@@ -1,16 +1,14 @@
 import os
 import re
-import vertexai
+
 from dotenv import load_dotenv
+from VertexAIInitialiser import initialise_vertex_ai
 from vertexai.generative_models import GenerativeModel, Content, Part
 
-_ = load_dotenv()
+vertexai = initialise_vertex_ai()
 
 gemini_model = os.getenv("GEMINI_MODEL")
-google_project = os.getenv("GOOGLE_PROJECT")
-project_region = os.getenv("PROJECT_REGION")
 
-vertexai.init(project=google_project, location=project_region)
 
 class Agent:
     def __init__(self, context=""):
