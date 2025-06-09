@@ -5,6 +5,11 @@ name = "pypi"
 
 [packages]
 dotenv = "*"
+ipython = "*"
+langchain-community = "*"
+langgraph = "*"
+langchain = "*"
+langchain-tavily = "*"
 
 [dev-packages]
 

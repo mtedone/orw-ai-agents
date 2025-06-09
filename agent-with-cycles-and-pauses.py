@@ -1,11 +1,11 @@
 import os
 import re
 
-from dotenv import load_dotenv
-from VertexAIInitialiser import initialise_vertex_ai
 from vertexai.generative_models import GenerativeModel, Content, Part
 
-vertexai = initialise_vertex_ai()
+from VertexAIInitialiser import initialise_vertex_ai
+
+_vertexai = initialise_vertex_ai()
 
 gemini_model = os.getenv("GEMINI_MODEL")
 
@@ -14,7 +14,7 @@ class Agent:
     def __init__(self, context=""):
         self.context = context
         self.messages = []
-        self.model = GenerativeModel(gemini_model)
+        self.model = GenerativeModel(gemini_model, generation_config={"temperature": 0})
 
     def get_prompt(self):
         return {
@@ -141,7 +141,7 @@ Answer: The total price for 2 apples and 3 bananas is $5.4.
 """.strip()
 
 # --- Query runner ---
-def query(question):
+def query(question, max_turns=10):
     agent = Agent(prompt)
     current_prompt = f"Question: {question}"
 
@@ -176,4 +176,5 @@ def query(question):
             agent.inject(current_prompt)
 
 # --- Test ---
-query("If I bought 10 apples, 3 bananas and 2 oranges, what is the total price?")
+query("If I bought 10 apples, 3 bananas and 2 oranges, what is the total price?", 5 )
+# query("What is the price of 2 bananas?", 5 )
